@@ -13,7 +13,7 @@ export default function MyAssButton({label,type="button",isLoad=false,disabled=f
     const isDisable= disabled||isLoad;
 
     return (
-      <button className={`bg-bg w-[100%] relative px-[1.5rem] py-[.8rem] text-[#fff] transition-all duration-200 font-medium ${isDisable ? 'brightness-[80%]':''}`}
+      <button className={`w-[100%] bg-blue-600 relative px-[1.5rem] py-[.8rem] text-[#fff] transition-all duration-200 font-medium ${isDisable ? 'brightness-[80%]':''}`}
         disabled={isDisable}
         type={type}
       >
