@@ -21,7 +21,6 @@ export const navBar2Context=React.createContext<appContextValues>({user:
 });
 
 
-
 export default function NavBar2() 
 {
   const{user,setUser}=useContext<appContextValues>(appContext)
@@ -35,12 +34,12 @@ export default function NavBar2()
     <navBar2Context.Provider value={values}>
       <nav className="my-container relative flex items-center h-[70px] justify-between">
         <Link href={"/"}>
-          <img src="/imgs/logo-nav-bar.png" className="w-[10rem]" alt="" />
+          <img src="/imgs/logo-nav-bar.png" className="w-[10rem]" />
         </Link>
         <div className="h-[100%] flex items-center gap-[1rem]">
           <SearchBar />
           <SearchBarMob />
-          {user && <UserMenu user={user} />}
+          {user && <UserMenu user={user}/>}
         </div>
       </nav>
     </navBar2Context.Provider>

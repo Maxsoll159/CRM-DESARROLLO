@@ -1,6 +1,13 @@
+'use client'
+
+import { appContext } from "@/context/AppContenxt"
+import { useContext } from "react"
+import UserMenu from "../NavBar2/components/UserMenu/UserMenu"
 import { BarraMenu } from "./components/BarraMenu"
 
-export default function Navbar() {
+export default function Navbar() 
+{
+    const{user}=useContext(appContext)
 
     return (
         <>
@@ -14,10 +21,8 @@ export default function Navbar() {
                                     <img className="hidden h-9 w-auto lg:block" src="https://nuevapagina.s3.amazonaws.com/DG-Logotipo_Blanco.png" alt="Desarrollo Global" />
                                 </div>
                             </div>
-
-
                             <div className="flex items-center sm:hidden">
-                                {/*Hmabrugesa */}
+                                {/*Hmabrugesa*/}
                                 <input type="checkbox" id="hamburguesa2" className="peer" hidden />
                                 <label htmlFor="hamburguesa2" className="flex flex-col justify-center rounded-md p-2 text-white hover:bg-blue-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <div className="h-0.5 w-4 bg-white transition"></div>
@@ -28,11 +33,7 @@ export default function Navbar() {
                                     <BarraMenu />
                                 </div>
                             </div>
-
                         </div>
-
-
-
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                             {/*vcer notificaciones*/}
@@ -42,10 +43,8 @@ export default function Navbar() {
                                     <path strokeLinecap="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                 </svg>
                             </button>
-
                             {/* PERFIL HAMBRUGYESA */}
-
-                            <div className="relative ml-3">
+                          {/*   <div className="relative ml-3">
                                 <div>
                                     <input type="checkbox" className="peer" id="hamburger" hidden />
                                     <label htmlFor="hamburger" className="flex p-3 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 gap-3 items-center hover:bg-slate-500 cursor-pointer">
@@ -61,7 +60,10 @@ export default function Navbar() {
                                         <a href="#" className="block px-4 py-2 text-sm text-gray-700">Sign out</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+                            {
+                              user&&<UserMenu user={user}/>
+                            }
                         </div>
                     </div>
                 </div>

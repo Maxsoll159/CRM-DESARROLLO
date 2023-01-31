@@ -49,10 +49,10 @@ export default function UserDropDown({show}:{show:boolean})
           Welcome !
        </span>
        {
-         optList.map(opt=>
+         optList.map((opt,pos)=>
           {
             return (
-              <UserDropDownOption {...opt}/>
+              <UserDropDownOption key={pos} {...opt}/>
             )  
           })
        }
