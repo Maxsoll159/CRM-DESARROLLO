@@ -3,7 +3,7 @@ import AppContenxt from '@/context/AppContenxt';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '../../styles/globals.css'
-import Head from './Head';
+import Head from './head';
 
 export default function RootLayout({
     children,

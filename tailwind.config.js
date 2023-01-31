@@ -19,9 +19,7 @@ module.exports = {
         'navBar': "#313a46",
         'fontIcon' : "#DCDEFC",
         'colorIconDas': "#727CF5",
-<<<<<<< HEAD
-        'activate': "#7B7EF6"
-=======
+        'activate': "#7B7EF6",
         bg:"#fafbfe",
         bg1:"#313a46",
         bgHover:"#3c4655",
@@ -42,7 +40,6 @@ module.exports = {
         myGreenDark:"#09b080",
         myYellow:"#ffc626",
         myYellowDark:"#ffbc00"
->>>>>>> a772d2e22dc772e8eaa9f219ec44dd2b83fd94d2
       },
       zIndex: {
         'z-100': "100000"
