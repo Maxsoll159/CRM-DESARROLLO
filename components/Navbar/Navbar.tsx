@@ -1,16 +1,37 @@
 'use client'
 
 import { appContext } from "@/context/AppContenxt"
+import appContextValues from "@/interfaces/appContextValues"
+import React from "react"
 import { useContext } from "react"
-import UserMenu from "../NavBar2/components/UserMenu/UserMenu"
+import UserMenu from "../UserMenu/UserMenu"
 import { BarraMenu } from "./components/BarraMenu"
+
+export const navbarContext = React.createContext<appContextValues>(
+  {user:
+    {
+     avatar:'',
+     correo:'',
+     id:'',
+     nombre:'',
+     tipo:'',
+     token:'',
+    },
+    setUser:()=>null  
+  })
 
 export default function Navbar() 
 {
-    const{user}=useContext(appContext)
+    const{user,setUser}=useContext<appContextValues>(appContext)
+
+    const values=
+    {
+      user,
+      setUser
+    }
 
     return (
-        <>
+        <navbarContext.Provider value={values}>
             <div className="bg-navBar">
                 <div className="mx-auto container px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
@@ -68,7 +89,7 @@ export default function Navbar()
                     </div>
                 </div>
             </div>
-        </>
+        </navbarContext.Provider>
 
     )
 }

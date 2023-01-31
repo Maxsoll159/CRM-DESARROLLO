@@ -28,14 +28,9 @@ export default function AppContenxt({children}:{children:any})
   const[user,setUser]=useState<user|undefined>(undefined)
   const router = useRouter()
 
-  function gettingUser()
-  {
-    return localStorage.getItem('myUserCRM')
-  }
-
   useEffect(()=>
   {
-    const user = gettingUser()
+    const user = localStorage.getItem('myUserCRM')
     if(user===null)return router.push('/login') 
     
     const form = new FormData()
@@ -44,7 +39,7 @@ export default function AppContenxt({children}:{children:any})
     postRequest(form,'validation')
     .then(res=>
         {
-            if(res===false)return
+            if(res===false)return router.push('/login') 
             setUser(res)
         })
   },[])
