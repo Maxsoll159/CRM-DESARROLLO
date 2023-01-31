@@ -14,7 +14,7 @@ export default function ActivateLink({ menu }: DataNav) {
             {menu.map((datos) => (
                 <>
                     <Link href={datos.href}>
-                        <p className={` ${valores[valores.length - 2] == datos.tipo && "text-blue-500"
+                        <p className={` ${valores[valores.length - 1] == datos.tipo && "text-activate"
                             } text-dark py-2 rounded-md text-base font-medium flex items-center gap-3 w-full px-2 h-full uppercase`}>
                             <i className={datos.icon}></i>{datos.nombre}
                         </p>
@@ -24,7 +24,7 @@ export default function ActivateLink({ menu }: DataNav) {
 
                             <Link
                                 href={submenu.href}
-                                className={`${submenu.tipo == segment && "text-blue-500"
+                                className={`${submenu.tipo == segment && "text-activate"
                                     } mx-9 w-10/12 block`}
                             >
                                 {submenu.nombre}

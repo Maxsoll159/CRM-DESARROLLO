@@ -1,4 +1,8 @@
+'use client';
+import { useRouter } from 'next/navigation';
 export default function PagreCrearCertificado() {
+    const router = useRouter();
+
     return (
         <div className="container mx-auto">
             <div className="w-full px-10">
@@ -6,56 +10,28 @@ export default function PagreCrearCertificado() {
                     <h1 className="text-gray-400 font-medium text-2xl">
                         Crear Certificados Masivamente
                     </h1>
-                    <div className="flex justify-between mt-10 gap-10 flex-wrap">
-                        <div className="w-full mx-auto xl:w-[48%] lg:w-[48%]">
-                            <table className="border-collapse border border-slate-500 w-full">
-                                <thead>
-                                    <tr>
-                                        <th className="border border-slate-600 ">State</th>
-                                        <th className="border border-slate-600 ">City</th>
-                                        <th className="border border-slate-600 ">City</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td className="border border-slate-700 ">Indiana</td>
-                                        <td className="border border-slate-700 ">Indianapolis</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border border-slate-700 ">Ohio</td>
-                                        <td className="border border-slate-700 ">Columbus</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border border-slate-700 ">Michigan</td>
-                                        <td className="border border-slate-700 ">Detroit</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="w-full xl:w-[48%] lg:w-[48%]">
-                            <div className="w-full bg-green-100 py-20 border-dashed border-2 border-gray-600">
-                                <h2 className="text-center font-semibold text-lg">
-                                    Subir Archivo Excel
-                                </h2>
-                                <div className="flex justify-center mt-10">
-                                    <i className="fa-solid fa-file-excel fa-3x text-center"></i>
-                                </div>
-                                <form className="flex items-center space-x-6 justify-center mt-10">
-                                    <div className="shrink-0"></div>
-                                    <label className="block">
-                                        <input
-                                            type="file"
-                                            className="block w-full text-sm text-slate-500
-                                        file:mr-4 file:py-2 file:px-4
-                                        file:rounded-full file:border-0
-                                        file:text-sm file:font-semibold
-                                        file:bg-green-50 file:text-green-700
-                                        hover:file:bg-green-100
-                    "/>
-                                    </label>
-                                </form>
+                    <p className="mt-4 font-normal text-gray-500">Puedes importar los certificados cargando un archivo o copiandolos y pegandolos desde un archivos.</p>
+                    <div className="flex justify-between mt-10 gap-9 flex-wrap">
+                        <button className="w-full text-black mx-auto xl:w-[48%] lg:w-[48%] border-dashed border-2 border-gray-600 rounded-lg flex justify-center items-center py-40 hover:bg-blue-400 hover:text-white" onClick={() => router.push('/dashboard/certificados/crearcertificado/copiarpegar')}>
+
+                            <div className="mx-3">
+                                <i className="fa-solid fa-file-import fa-3x text-center w-full"></i>
+                                <p className="font-medium mt-2 text-center">Copiar/pegar</p>
+                                <p className="mt-2 text-center">Copie y pegue los contactos desde su archivo Excel (.xls)</p>
                             </div>
-                        </div>
+
+
+                        </button>
+                        <button className="w-full text-black mx-auto xl:w-[48%] lg:w-[48%] border-dashed border-2 border-gray-600 rounded-lg flex justify-center items-center py-40 hover:bg-green-400 hover:text-white">
+
+                            <div className="mx-3">
+                                <i className="fa-solid fa-file-excel fa-3x text-center w-full"></i>
+                                <p className="font-medium mt-2 text-center">Cargar un archivo</p>
+                                <p className="mt-2 text-center">Seleccionar un archivo .csv .xlxs o .txt de tu ordenador</p>
+                            </div>
+
+
+                        </button>
                     </div>
                 </div>
             </div>

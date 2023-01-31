@@ -27,18 +27,18 @@ export const DatosNav = [
     },
     {
         id: 3,
-        nombre: "pagos",
-        href: "/pagos",
-        tipo: "pagos",
-        icon: 'fa-solid fa-money-bill',
+        nombre: "prospectos",
+        href: "/dashboard/prospectos",
+        tipo: "prospectos",
+        icon: 'fa-solid fa-list',
         subMenu: []
     },
     {
         id: 4,
-        nombre: "prospectos",
-        href: "/prospectos",
-        tipo: "prospectos",
-        icon: 'fa-solid fa-list',
+        nombre: "pagos",
+        href: "/pagos",
+        tipo: "pagos",
+        icon: 'fa-solid fa-money-bill',
         subMenu: []
     },
     {

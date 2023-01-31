@@ -18,7 +18,8 @@ module.exports = {
       colors:{
         'navBar': "#313a46",
         'fontIcon' : "#DCDEFC",
-        'colorIconDas': "#727CF5"
+        'colorIconDas': "#727CF5",
+        'activate': "#7B7EF6"
       },
       zIndex: {
         'z-100': "100000"
