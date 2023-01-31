@@ -19,12 +19,41 @@ module.exports = {
         'navBar': "#313a46",
         'fontIcon' : "#DCDEFC",
         'colorIconDas': "#727CF5",
+<<<<<<< HEAD
         'activate': "#7B7EF6"
+=======
+        bg:"#fafbfe",
+        bg1:"#313a46",
+        bgHover:"#3c4655",
+        myLitePurple:"#727cf5",
+        myLitePurpleHover:"#6169d0",
+        myBlack:"#1A1927",
+        mySearchField:"#3c4655",
+        myText2:"#6c757d",
+        myText:"#98a6ad", 
+        myTextInput:"#6c757d",
+        myTitle:"#6c757d",
+        myWhite:"#fff",
+        myBorder:"#dee2e6",
+        myBorderDark:"#b8b9ba",
+        myRed:"#fa5c7c",
+        myRedDark:"#d54e69",
+        myGreen:"#0acf97",
+        myGreenDark:"#09b080",
+        myYellow:"#ffc626",
+        myYellowDark:"#ffbc00"
+>>>>>>> a772d2e22dc772e8eaa9f219ec44dd2b83fd94d2
       },
       zIndex: {
         'z-100': "100000"
+      },
+      screens:
+      {
+        'mob':{'max':'1200px'},
+        'mob2':{'max':'570px'}
       }
     },
   },
+  
   plugins: [],
 }

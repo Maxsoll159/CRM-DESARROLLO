@@ -64,7 +64,6 @@ export default function TableData() {
     return (
 
         <DataTable
-            title="Certificados"
             columns={columns}
             data={filteredItems}
             subHeaderComponent={subHeaderComponentMemo}
