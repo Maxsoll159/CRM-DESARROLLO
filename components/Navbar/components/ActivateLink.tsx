@@ -23,6 +23,7 @@ export default function ActivateLink({ menu }: DataNav) {
                         {datos?.subMenu?.map((submenu) => (
 
                             <Link
+                            key={submenu.id}
                                 href={submenu.href}
                                 className={`${submenu.tipo == segment && "text-activate"
                                     } mx-9 w-10/12 block`}

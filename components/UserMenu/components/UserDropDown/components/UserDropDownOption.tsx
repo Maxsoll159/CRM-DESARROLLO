@@ -50,7 +50,7 @@ function UserDropDownContent({icon, label}:{icon:IconProp,label:string})
 {
   return (
     <>
-      <FontAwesomeIcon icon={icon} />
+
       <span>{label}</span>
     </>
   );
