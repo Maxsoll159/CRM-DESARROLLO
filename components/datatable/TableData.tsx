@@ -7,6 +7,7 @@ import { EstilosData } from './components/StyleComponent';
 import { FiltraDatos } from './hook/FiltraDatos';
 import { ExportExcel } from './hook/ExportExcel';
 import { Acciones } from './components/Acciones';
+import XLSX from 'xlsx'
 
 const columns: TableColumn<DataRow>[] = [
     {
@@ -57,12 +58,14 @@ const columns: TableColumn<DataRow>[] = [
 
 ];
 
-export default function TableData() {
+const lel = XLSX.read(data, );
+
+export default function TableData() 
+{
     const [filteredItems, subHeaderComponentMemo] = FiltraDatos(data)
     const [actionsMemo] = ExportExcel(data)
 
     return (
-
         <DataTable
             columns={columns}
             data={filteredItems}
