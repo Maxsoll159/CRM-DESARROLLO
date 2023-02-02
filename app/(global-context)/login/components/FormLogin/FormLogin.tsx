@@ -77,15 +77,6 @@ export default function FormLogin({
         isLoad={load}
         disabled={errList !== "ok"}
       />
-    {/*   <button
-        onClick={() => {
-          const form = new FormData();
-          form.append("token", user ? user.token : "");
-          postRequest(form, "logout").then((res) => console.log(res));
-        }}
-      >
-        fdfdf
-      </button>  */}
     </form>
   );
 }
