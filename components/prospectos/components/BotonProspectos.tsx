@@ -27,7 +27,7 @@ export const BotonProspectos = ({ setFilterText }: any) => {
             <div className="flex gap-3 items-center">
                 {
                     button.map((opc) => (
-                        <button onClick={() => setFilterText(opc.filtro)} className="py-1 px-3 rounded border-indigo-400 border-2 text-indigo-400 focus:bg-indigo-400 focus:text-white">{opc.name}</button>
+                        <button key={opc.id} onClick={() => setFilterText(opc.filtro)} className="py-1 px-3 rounded border-indigo-400 border-2 text-indigo-400 focus:bg-indigo-400 focus:text-white">{opc.name}</button>
                     ))
                 }
             </div>

@@ -1,9 +1,10 @@
 import React from 'react'
 import AppContenxt from '@/context/AppContenxt';
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@fortawesome/fontawesome-free/css/all.css'
+
 import '../../styles/globals.css'
-import Head from './head';
+import Head from './Head';
+
 
 export default async function RootLayout({
     children,
@@ -14,7 +15,7 @@ export default async function RootLayout({
     
     return (
       <html lang="en" className="bg-bg">
-        <Head/>
+        <Head></Head>
         <body>
           <AppContenxt>{children}</AppContenxt>
         </body>
