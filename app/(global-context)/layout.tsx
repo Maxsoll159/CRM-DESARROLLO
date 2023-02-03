@@ -5,11 +5,13 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '../../styles/globals.css'
 import Head from './head';
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
   }: {
     children: React.ReactNode
-  }) {
+  }) 
+  {
+    
     return (
       <html lang="en" className="bg-bg">
         <Head/>

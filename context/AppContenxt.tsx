@@ -39,14 +39,14 @@ export default function AppContenxt({children}:{children:any})
     postRequest(form,'validation')
     .then(res=>
         {
-            if(res===false)return router.push('/login') 
+            if(res===false)return router.push('/login')
             setUser(res)
         })
   },[])
 
   useEffect(()=>
   {
-    if(user!==undefined)
+    if(user)
     {
        if(user.isLogin===false)return router.push('/login') 
 
@@ -54,6 +54,7 @@ export default function AppContenxt({children}:{children:any})
        return
     }
   },[user])
+
 
   const values:appContextValues = 
   {

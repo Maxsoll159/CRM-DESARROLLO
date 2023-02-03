@@ -1,5 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import ExcelUploader from '@/components/ExcelUploader/ExcelUploader';
+
 export default function PagreCrearCertificado() {
     const router = useRouter();
 
@@ -22,16 +24,7 @@ export default function PagreCrearCertificado() {
 
 
                         </button>
-                        <button className="w-full text-black mx-auto xl:w-[48%] lg:w-[48%] border-dashed border-2 border-gray-600 rounded-lg flex justify-center items-center py-40 hover:bg-green-400 hover:text-white">
-
-                            <div className="mx-3">
-                                <i className="fa-solid fa-file-excel fa-3x text-center w-full"></i>
-                                <p className="font-medium mt-2 text-center">Cargar un archivo</p>
-                                <p className="mt-2 text-center">Seleccionar un archivo .csv .xlxs o .txt de tu ordenador</p>
-                            </div>
-
-
-                        </button>
+                        <ExcelUploader/>
                     </div>
                 </div>
             </div>

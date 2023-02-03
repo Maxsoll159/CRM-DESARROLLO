@@ -49,7 +49,7 @@ export default function UserMenuDashsBoard()
             >
               Ver Certificados
             </Link>
-            <a href="" className="mx-9 w-10/12 block py-2">
+            <a href="/certificados/new" className="mx-9 w-10/12 block py-2">
               Crear Certificados
             </a>
             <a href="" className="mx-9 w-10/12 block py-2">
