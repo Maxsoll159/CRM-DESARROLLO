@@ -27,6 +27,15 @@ body
   padding-left: 3.5rem;
   padding-right: 3.5rem;
 }
+img
+{
+  display: block;
+}
+
+.nav-option:hover .navbar-pipe
+{
+  display: block;
+}
 
 @media screen and (max-width:1200px)
 {
@@ -37,7 +46,3 @@ body
   }
 }
 
-img
-{
-  display: block;
-}

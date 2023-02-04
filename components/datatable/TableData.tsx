@@ -58,7 +58,6 @@ const columns: TableColumn<DataRow>[] = [
 
 ];
 
-const lel = XLSX.read(data, );
 
 export default function TableData() 
 {

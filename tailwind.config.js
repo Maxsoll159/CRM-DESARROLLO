@@ -39,7 +39,8 @@ module.exports = {
         myGreen:"#0acf97",
         myGreenDark:"#09b080",
         myYellow:"#ffc626",
-        myYellowDark:"#ffbc00"
+        myYellowDark:"#ffbc00",
+        primary:"#2D62ED"
       },
       zIndex: {
         'z-100': "100000"

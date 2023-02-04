@@ -3,7 +3,7 @@ import AppContenxt from '@/context/AppContenxt';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import '../../styles/globals.css'
-import Head from './Head';
+import Head from './head';
 
 
 export default async function RootLayout({
@@ -16,7 +16,7 @@ export default async function RootLayout({
     return (
       <html lang="en" className="bg-bg">
         <Head></Head>
-        <body>
+        <body className='flex'>
           <AppContenxt>{children}</AppContenxt>
         </body>
       </html>
