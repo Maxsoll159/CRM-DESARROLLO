@@ -48,7 +48,8 @@ module.exports = {
       screens:
       {
         'mob':{'max':'1200px'},
-        'mob2':{'max':'570px'}
+        'mob2':{'max':'570px'},
+        'desktop':{'max':'1600px'}
       }
     },
   },
