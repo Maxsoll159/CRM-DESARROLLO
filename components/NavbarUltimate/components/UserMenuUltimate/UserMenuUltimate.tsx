@@ -32,14 +32,14 @@ interface optionList
 {
     label:string;
     icon:IconProp;
-    func:()=>void
+    func?:()=>void
 }
 
 function UserOptionMenu({user,setUser}:{user:user,setUser:Dispatch<SetStateAction<user | undefined>>})
 {
     const[show,setShow]=useState<boolean>(false)
 
-    const optionList = [
+    const optionList:Array<optionList>= [
       {
         label: "sign out",
         icon: faRightFromBracket,
@@ -69,10 +69,10 @@ function UserOptionMenu({user,setUser}:{user:user,setUser:Dispatch<SetStateActio
         <div className={`pl-[1rem] absolute cursor-auto transition-all duration-200 right-[-8.5rem] ${show?'opacity-1 pointer-events-auto translate-x-[1rem]':'opacity-0 pointer-events-none translate-x-[0]'} min-h-[100%] flex items-stretch`}>
          <ul className={`shadow-lg flex flex-col justify-center`}>
            {
-             optionList.map(opt=>
+             optionList.map((opt,pos)=>
                 {
                     return(
-                       <UserOption {...opt}/> 
+                       <UserOption key={pos} {...opt}/> 
                     )
                 })
            }
@@ -82,7 +82,7 @@ function UserOptionMenu({user,setUser}:{user:user,setUser:Dispatch<SetStateActio
     );
 }
 
-function UserOption(props)
+function UserOption(props:optionList)
 {
   const{label}=props
     

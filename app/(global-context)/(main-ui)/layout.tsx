@@ -1,3 +1,4 @@
+import HeaderNav from '@/components/HeaderNav/HeaderNav';
 import Navbar from '@/components/Navbar/Navbar';
 import NavbarUltimate from '@/components/NavbarUltimate/NavbarUltimate';
 import UserMenuDashsBoard from '@/components/UserMenuDashsBoard/UserMenuDashsBoard';
@@ -10,14 +11,15 @@ export default function RootLayout({
   return (
     <>
       <header className="w-[240px] h-[100%]">
-       {/*  <Navbar/> */}
-       <NavbarUltimate/>
+        {/*  <Navbar/> */}
+        <NavbarUltimate />
       </header>
-      <main className="py-[1.2rem] px-[1.5rem] flex gap-[2rem] flex-1">
+      <main className="flex-1 overflow-hidden">
         {/* <section className='bg-myWhite shadow-md'>
           <UserMenuDashsBoard/>
         </section> */}
-        {children}
+        <HeaderNav />
+        <div className="py-[1.2rem] px-[1.5rem] pt-[6rem]">{children}</div>
       </main>
     </>
   );
