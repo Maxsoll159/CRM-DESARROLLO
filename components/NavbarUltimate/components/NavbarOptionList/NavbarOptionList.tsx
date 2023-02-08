@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React,{useState} from 'react'
 import NavbarOption from './components/NavbarOption';
 import { faHouse,faFolder,faChartPie,faDollar, faPaperPlane, faRotateRight, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { usePathname } from 'next/navigation';
@@ -8,12 +8,35 @@ import { usePathname } from 'next/navigation';
 export default function NavbarOptionList() 
 {
   const path = usePathname()
+  const[show,setShow]=useState({show:false,isSelected:0})
+
+  const optionList =
+  [
+    {
+      label:"dashboard",
+      icon:faHouse,
+    },
+    {
+      label:"prospectos",
+      icon:faFolder,
+    },
+    {
+      label:"certificados",
+      icon:faChartPie,
+    }
+  ]
 
   return (
     <>
-      <NavbarOption
+      {
+        optionList.map((opt,pos)=>
+          {
+            return <NavbarOption key={pos} id={pos} pathname={path} show={show} setShow={setShow} {...opt}/>
+          })
+      }
+      {/* <NavbarOption
         href={"/"}
-        label={"dashboard"}
+        label={}
         icon={faHouse}
         pathname={path}
         isHome={true}
@@ -59,7 +82,7 @@ export default function NavbarOptionList()
         label={"email"}
         icon={faEnvelope}
         pathname={path}
-      />
+      /> */}
     </>
   );
 }
