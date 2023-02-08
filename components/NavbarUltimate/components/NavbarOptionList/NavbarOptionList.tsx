@@ -23,7 +23,27 @@ export default function NavbarOptionList()
     {
       label:"certificados",
       icon:faChartPie,
-    }
+    },
+    {
+      label:"certificados",
+      icon:faDollar,
+    },
+    {
+      label:"certificados",
+      icon:faPaperPlane,
+    },
+    {
+      label:"certificados",
+      icon:faRotateRight,
+    },
+    {
+      label:"certificados",
+      icon:faUser,
+    },
+    {
+      label:"certificados",
+      icon:faEnvelope,
+    },
   ]
 
   return (
@@ -31,7 +51,16 @@ export default function NavbarOptionList()
       {
         optionList.map((opt,pos)=>
           {
-            return <NavbarOption key={pos} id={pos} pathname={path} show={show} setShow={setShow} {...opt}/>
+            return (
+              <NavbarOption
+                key={pos}
+                id={pos}
+                pathname={path}
+                show={show}
+                setShow={setShow}
+                {...opt}
+              />
+            );
           })
       }
       {/* <NavbarOption

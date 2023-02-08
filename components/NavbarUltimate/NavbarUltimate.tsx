@@ -11,7 +11,7 @@ export default function NavbarUltimate()
       <div className="w-[152px] block desktop:w-[120px] px-[44px] box-content mb-[4.5rem] pt-[44px] desktop:mx-auto">
         <img src="/img/logo-veritcal.png" className="w-[100%]" alt="" />
       </div>
-      <ul className="flex flex-col gap-[2rem] mb-[3rem]">
+      <ul className="flex flex-col mb-[3rem] gap-[1.5rem]">
         <NavbarOptionList/>  
       </ul>
       <UserMenuUltimate/>
