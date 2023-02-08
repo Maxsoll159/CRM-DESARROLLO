@@ -13,35 +13,53 @@ export default function NavbarOptionList()
   const optionList =
   [
     {
+      href:'/',
       label:"dashboard",
       icon:faHouse,
     },
     {
+      href:'/prospectos',
       label:"prospectos",
       icon:faFolder,
+      list:[
+        {
+          label:'Prospectos',
+          href:'/prospectos'
+        },
+        {
+          label:'Elegir Criterio de Busqueda',
+          href:'/prospectos/search'
+        }
+      ]
     },
     {
+      href:'/certificados',
       label:"certificados",
       icon:faChartPie,
     },
     {
-      label:"certificados",
+      href:'/pagos',
+      label:"pagos",
       icon:faDollar,
     },
     {
-      label:"certificados",
+      href:'/envios',
+      label:"Envios",
       icon:faPaperPlane,
     },
     {
-      label:"certificados",
+      href:'/pendientes',
+      label:"pendientes",
       icon:faRotateRight,
     },
     {
-      label:"certificados",
+      href:'/usuarios',
+      label:"usuarios",
       icon:faUser,
     },
     {
-      label:"certificados",
+      href:'/email',
+      label:"email",
       icon:faEnvelope,
     },
   ]
@@ -63,55 +81,6 @@ export default function NavbarOptionList()
             );
           })
       }
-      {/* <NavbarOption
-        href={"/"}
-        label={}
-        icon={faHouse}
-        pathname={path}
-        isHome={true}
-      />
-      <NavbarOption
-        href={"/prospectos"}
-        label={"prospectos"}
-        icon={faFolder}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/certificados"}
-        label={"certificados"}
-        icon={faChartPie}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/pagos"}
-        label={"pagos"}
-        icon={faDollar}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/envios"}
-        label={"envios"}
-        icon={faPaperPlane}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/pendientes"}
-        label={"pendientes"}
-        icon={faRotateRight}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/usuarios"}
-        label={"usuarios"}
-        icon={faUser}
-        pathname={path}
-      />
-      <NavbarOption
-        href={"/email"}
-        label={"email"}
-        icon={faEnvelope}
-        pathname={path}
-      /> */}
     </>
   );
 }
