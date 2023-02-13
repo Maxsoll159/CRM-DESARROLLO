@@ -41,6 +41,13 @@ export default function NavbarOptionList()
       href:'/pagos',
       label:"pagos",
       icon:faDollar,
+      list:
+      [
+        {
+          label:"Nuevo pago",
+          href:"/pagos/new"
+        }
+      ]
     },
     {
       href:'/envios',

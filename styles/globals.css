@@ -37,6 +37,11 @@ img
   display: block;
 }
 
+#file-upload-button
+{
+  cursor: pointer !important;
+}
+
 @media screen and (max-width:1200px)
 {
   .my-container

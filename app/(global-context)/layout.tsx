@@ -14,7 +14,7 @@ export default async function RootLayout({
   }) 
   {
     return (
-      <html lang="en" className="bg-bg">
+      <html lang="en" className="bg-myWhite">
         <Head></Head>
         <body className='flex my-container'>
           <AppContenxt>{children}</AppContenxt>

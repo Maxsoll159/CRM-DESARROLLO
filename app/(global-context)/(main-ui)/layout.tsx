@@ -13,7 +13,7 @@ export default function RootLayout({
       </header>
       <main className="flex-1 overflow-hidden">
         <HeaderNav />
-        <div className="py-[1.2rem] px-[1.5rem] pt-[6rem]">{children}</div>
+        <div className="py-[1.2rem] px-[6.3rem] pt-[6rem]">{children}</div>
       </main>
     </>
   );
