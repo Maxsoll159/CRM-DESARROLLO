@@ -15,13 +15,29 @@ export default function UserMenuUltimate()
   return (
     <>
       {user && (
-        <div className='flex items-stretch px-[20.8px] gap-[1rem]'>
+        <div className='flex items-center px-[20.8px] gap-[1rem]'>
+          {/* <section className='relative flex items-stretch'>
+             <UserOptionMenu user={user} setUser={setUser}/>
+          </section> */}
+          <strong>
+            {user.nombre}
+          </strong>
           <div className="w-[50px] h-[50px] rounded-[100%] overflow-hidden">
             <img src={user.avatar} className="object-cover" />
           </div>
-          <section className='relative flex items-stretch'>
-             <UserOptionMenu user={user} setUser={setUser}/>
-          </section>
+          <button
+           className='text-myBlack'
+           onClick={() => {
+            const form = new FormData();
+            form.append("token", user ? user.token : "");
+            postRequest(form, "logout").then((res) => console.log(res));
+            if (user) {
+              setUser({ ...user, isLogin: false });
+            }
+          }}
+           >
+             <FontAwesomeIcon size='xl' icon={faRightFromBracket} />
+          </button>
         </div>
       )}
     </>

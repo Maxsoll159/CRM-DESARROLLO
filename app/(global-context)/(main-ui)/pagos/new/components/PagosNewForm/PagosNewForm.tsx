@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Field, Formik } from 'formik';
+import { Field, Formik,Form } from 'formik';
 import UpperForm from './components/UpperForm/UpperForm';
 import PagosCertificados from './components/PagosCertificados/PagosCertificados';
 import Cuotas from './components/Cuotas/Cuotas';
@@ -36,18 +36,18 @@ export default function PagosNewForm()
           alumno: "",
         }}
         validate={(values) => {
-          console.log(values);
+          null
         }}
         onSubmit={(values) => {
-          null;
+          null
         }}
       >
-        <>
+        <Form>
           <UpperForm />
           <PagosCertificados />
           <Cuotas />
           <BottomForm />
-        </>
+        </Form>
       </Formik>
     </pagosNewFormContext.Provider>
   );

@@ -6,7 +6,6 @@ export default function UpperForm()
 {
    return(
     <div className="bg-myGray px-[2rem] py-[1.5rem] mb-[1.6rem]">
-        <Form>
           <div className="flex gap-[.5rem] items-stretch">
             <FormOption name={"codigo"} label="codigo" />
             <FormOption
@@ -52,7 +51,6 @@ export default function UpperForm()
             />
             <FormOption label="fecha fin" name={"fechaFin"} type="date" />
           </div>
-        </Form>
       </div>
    )
 }

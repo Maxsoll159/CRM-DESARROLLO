@@ -2,6 +2,7 @@
 
 import optionList from '@/components/NavbarUltimate/interfaces/optionList';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { Dispatch, LegacyRef, MutableRefObject, SetStateAction, useEffect, useRef,useState } from 'react';
@@ -44,13 +45,13 @@ export default function NavbarOption(props:props)
      <li
        className={`overflow-hidden transition-all duration-200`}
        style={{
-         height: `${26 + (show.show && isShow ? getH() : 0)}px`,
+         height: `${30 + (show.show && isShow ? getH() : 0)}px`,
        }}
      >
        <div ref={container}>
          <Link
            href={href}
-           className="nav-option flex relative items-center text-[15px] font-medium pl-[1.3rem] hover:text-myWhite gap-[1.8rem] desktop:text-[13px] capitalize"
+           className="nav-option flex relative items-center text-[15px] font-medium pl-[1.3rem] hover:text-myWhite gap-[1.8rem] capitalize"
            onClick={() =>
              setShow((prev) => {
                return {
@@ -71,15 +72,18 @@ export default function NavbarOption(props:props)
            <span className="capitalize">{label}</span>
          </Link>
          {list && (
-           <section>
+           <ul className='w-[100%] flex flex-col items-start pl-[5.5rem] mt-[1rem] gap-[.5rem]'>
              {list.map((entry:optionList, pos:number) => {
                return (
-                 <Link key={pos} href={entry.href}>
-                   {entry.label}
-                 </Link>
+                 <li key={pos} className="flex items-center gap-1">
+                   <FontAwesomeIcon size='sm' icon={faCheckCircle} />
+                   <Link className="text-[13px] max-w-[7rem] text-ellipsis whitespace-nowrap overflow-hidden" href={entry.href}>
+                     {entry.label}
+                   </Link>
+                 </li>
                );
              })}
-           </section>
+           </ul>
          )}
        </div>
      </li>

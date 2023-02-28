@@ -40,14 +40,15 @@ img
 #file-upload-button
 {
   cursor: pointer !important;
+  
 }
 
-@media screen and (max-width:1200px)
+/* @media screen and (max-width:1200px)
 {
   .my-container
   {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-}
+} */
 

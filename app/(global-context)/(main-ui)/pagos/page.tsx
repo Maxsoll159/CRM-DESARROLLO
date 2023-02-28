@@ -2,39 +2,84 @@
 
 import MyBlock from '@/components/MyBlock/MyBlock'
 import TheDataTable from '@/components/TheDataTable/TheDataTable'
+import Link from 'next/link'
 import React from 'react'
+
+const customStyles=
+{
+    rows:
+    {
+        style:
+        {
+            padding:"5px 0px",
+            color:'#272D3B',
+            '&:hover':
+            {
+                backgroundColor:'#CCE5FF',
+            }
+        }
+    }
+}
+
+const estadoStyle=
+{
+  color:'#fff',
+  borderRadius:'.3rem',
+  display:'flex',
+  justifyContent:'center',
+  textTransform:'uppercase',
+}
 
 export default function page() 
 {
 
   const columns = [
     {
-        name: 'CODIGO',
+        name: 'ID',
         selector: (row:any) => row.codigo,
     },
     {
-        name: 'FECHA VOUCHER',
-        selector: (row:any) => row.date,
+        name: 'EDITOR',
+        selector: (row:any) => <img src={row.editor} className="block h-[37px] w-[37px] rounded-[100%] object-cover" alt="" />,
     },
     {
-        name: 'Nº DEPOSITO',
-        selector: (row:any) => row.deposito,
+        name: 'FECHA DE VOUCHER',
+        selector: (row:any) => row.fechaVaucher,
     },
     {
-        name: 'MET.PAG',
-        selector: (row:any) => row.metPag,
+        name: 'MEDIO PAGO',
+        selector: (row:any) => row.medioPago,
     },
     {
-        name: 'PAGO',
-        selector: (row:any) => row.pago,
+        name: 'COMPROBANTE',
+        selector: (row:any) => row.comprobantePago,
     },
     {
-        name: 'PROGRAMA',
+        name: 'ALUMNO',
+        selector: (row:any) => row.alumno,
+    },
+    {
+        name: 'PRGRAMA',
         selector: (row:any) => row.programa,
     },
     {
-        name: 'DNI/Telefono/Nombre',
-        selector: (row:any) => row.email,
+        name: 'HISTORIAL',
+        selector: (row:any) => row.historial,
+    },
+    {
+        name: 'ESTADO',
+        selector: (row:any) => row.estado,
+        conditionalCellStyles:
+        [
+            {
+                when:(row:any)=>row.estado==='pendiente',
+                style:{...estadoStyle,backgroundColor:'#FDAB3D'}
+            },
+            {
+                when:(row:any)=>row.estado==='pagado',
+                style:{...estadoStyle, backgroundColor:'#4AD69D'}
+            }
+        ]
     },
   ];
   
@@ -42,49 +87,40 @@ export default function page()
     {
         id: 1,
         codigo:'RP8-54',
-        date: '24/06/20202322',
-        deposito:'12345678998',
-        metPag:'inter',
+        editor:'https://static.nationalgeographic.es/files/styles/image_3200/public/01-rat-friends-nationalgeographic_1162144.jpg?w=1900&h=1267',
+        fechaVaucher:'fd/fd/fd',
+        medioPago:'yape',
         pago:'S/ 40743',
+        comprobantePago:'boleta',
         programa:'OSCE',
-        email:'fdfdf@gmail.com',
+        alumno:'jose',
+        historial:'fdfdf@gmail.com',
+        estado:'pagado'
     },
     {
         id: 2,
-        codigo:'RP8-01232',
-        date: '24/06/2020',
-        deposito:'12345678998',
-        metPag:'SCOTIA43',
-        pago:'S/ 43207',
+        codigo:'fdRP8-54',
+        editor:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/OK-button_-_Macro_photography_of_a_remote_control.jpg/800px-OK-button_-_Macro_photography_of_a_remote_control.jpg',
+        fechaVaucher:'fd/fggd/fd',
+        medioPago:'yafdpe',
+        pago:'S/ 4073343',
+        comprobantePago:'bolfdeta',
         programa:'OSCE',
-        email:'fdfdf@gmail.com',
-    },
-    {
-        id: 3,
-        codigo:'RP8-5401',
-        date: '24/06/2020',
-        deposito:'12345678998',
-        metPag:'SCOTIA',
-        pago:'S/ 407',
-        programa:'OSCE',
-        email:'fdfdf@gmail.com',
-    },
-    {
-        id: 4,
-        codigo:'RP8-0541',
-        date: '24/06/2020',
-        deposito:'12345678998',
-        metPag:'SCOTIA',
-        pago:'S/ 330754',
-        programa:'OSCE',
-        email:'fdfdf@gmail.com',
+        alumno:'jose',
+        historial:'fdfdf@gmailgg.com',
+        estado:"pendiente"
     },
   ]
   
 
   return (
-    <MyBlock title='Pagos'>
-       <TheDataTable columns={columns} data={data}/>
+    <MyBlock title="Pagos">
+      <TheDataTable
+        columns={columns}
+        data={data}
+        styles={customStyles}
+        buttons={<Link className='px-[1rem] py-[.3rem] rounded-[2rem] bg-[#00CCF2] whitespace-nowrap flex items-center text-myWhite' href={"/pagos/new"}>+ Agregar Nuevo</Link>}
+      />
     </MyBlock>
-  )
+  );
 }

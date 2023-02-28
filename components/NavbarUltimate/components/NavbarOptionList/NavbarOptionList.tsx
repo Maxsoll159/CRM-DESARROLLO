@@ -36,6 +36,13 @@ export default function NavbarOptionList()
       href:'/certificados',
       label:"certificados",
       icon:faChartPie,
+      list:
+      [
+        {
+          label:"Nuevo Certificado",
+          href:"/certificados/new"
+        }
+      ]
     },
     {
       href:'/pagos',

@@ -3,7 +3,7 @@
 import React,{useContext, useState} from 'react'
 import {Field} from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { pagosNewFormContext } from '../../PagosNewForm';
 
 interface props
@@ -14,6 +14,7 @@ interface props
     name?:string;
     as?:string;
     flex?:number;
+    styles?:string
 }
 
 export default function FormOption(props:props)
@@ -26,21 +27,26 @@ export default function FormOption(props:props)
       options,
       flex=1,
       name,
+      styles=''
     }=props
 
     const myStyles = 'px-[.4rem] py-[.2rem] h-[30.8px] w-[100%] cursor-auto border-inputBorder border-[1px] focus:border-primary outline-none rounded-[.3rem]'
+    const myName = name ||
+    label?.split('').map(entry=>
+      { 
+        if(entry===' ')return'-' 
+        return entry
+      }).join('')
+
 
     return (
       <div
-        className={`flex flex-col relative`}
-        style={{
-          flex: flex,
-        }}
+        className={`flex flex-col relative flex-1 ${styles}`}
       >
-        <label className="text-black uppercase">{label}</label>
+        <label className="text-black uppercase whitespace-nowrap overflow-hidden">{label}</label>
         {type !== "file" && (
           <Field
-            name={name}
+            name={myName}
             as={options ? "select" : as}
             className={`${myStyles}`}
             size={1}
@@ -60,7 +66,7 @@ export default function FormOption(props:props)
           </Field>
         )}
         {type === "file" && (
-          <FileField myStyles={myStyles} name={name}/>
+          <FileField myStyles={myStyles} name={myName}/>
         )}
       </div>
     );

@@ -1,13 +1,15 @@
+import pdfMaker from '@/helpers/pdfMaker';
 import { faSheetPlastic } from '@fortawesome/free-solid-svg-icons';
 import React, { useContext } from 'react'
 import MyButtonThin from '../../../MyButtonThin/MyButtonThin';
 import { pagosNewFormContext } from '../../PagosNewForm';
 import FormOption from '../FormOption/FormOption'
 
+
 export default function BottomForm() 
 {
   const{isOk}=useContext(pagosNewFormContext)
-  console.log(isOk)
+  
   return (
     <div>
       <section className="flex gap-[1rem] mb-[1rem]">
@@ -45,7 +47,7 @@ export default function BottomForm()
       </section>
       <div className="flex flex-col text-myBlack pl-[24px] items-start">
         <span className="capitalize mb-[9.5px]">ficha de inscripcion</span>
-        <MyButtonThin label="generar ficha" icon={faSheetPlastic} enabled={isOk} />
+        <MyButtonThin label="generar ficha" icon={faSheetPlastic} enabled={isOk}/>
       </div>
     </div>
   );

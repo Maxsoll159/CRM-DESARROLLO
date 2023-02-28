@@ -1,10 +1,11 @@
 'use client'
 
 import postRequest from '@/helpers/postRequest';
-import React, { useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import user from '@/interfaces/user';
 import { useRouter } from 'next/navigation';
 import appContextValues from '@/interfaces/appContextValues';
+import popup from '@/interfaces/popup';
 
 export const appContext=React.createContext<appContextValues>(
   {
@@ -18,14 +19,16 @@ export const appContext=React.createContext<appContextValues>(
       token:'',
       isLogin:false
      },
-     setUser:()=>null
+     setUser:()=>null,
+     showPopup:{show:false,popup:<></>},
+     setShowPopup:()=>null
   }
 )
-
 
 export default function AppContenxt({children}:{children:any}) 
 {
   const[user,setUser]=useState<user|undefined>(undefined)
+  const[showPopup,setShowPopup]=useState<popup>({show:false,popup:<></>})
   const router = useRouter()
 
   useEffect(()=>
@@ -59,7 +62,9 @@ export default function AppContenxt({children}:{children:any})
   const values:appContextValues = 
   {
     user,
-    setUser
+    setUser,
+    showPopup,
+    setShowPopup
   }
 
   return (
