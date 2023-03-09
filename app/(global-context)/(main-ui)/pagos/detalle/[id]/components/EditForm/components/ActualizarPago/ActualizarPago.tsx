@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik'
-import FormOption from '@/app/(global-context)/(main-ui)/pagos/new/components/PagosNewForm/components/FormOption/FormOption';
+import FormOption from '@/components/FormOption/FormOption';
 import React from 'react'
 
 export default function ActualizarPago()

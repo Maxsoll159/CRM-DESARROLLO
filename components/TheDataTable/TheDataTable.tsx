@@ -11,6 +11,7 @@ interface props
   conditionalStyles?:any;
   styles?:any;
   buttons?:ReactElement<any, any>;
+  myFilter?:{value:string,property:string}
 }
 
 export default function TheDataTable(props:props) 
@@ -21,14 +22,20 @@ export default function TheDataTable(props:props)
     columns,
     conditionalStyles,
     styles,
-    buttons
+    buttons,
+    myFilter
   }=props
 
   const [filterText, setFilterText] = React.useState('');
 	const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
-	const filteredItems = data.filter(
+	let filteredItems = data.filter(
 		(item: any) => JSON.stringify(item).toLowerCase().indexOf(filterText.toLowerCase()) !== -1,
 	);
+
+  if(myFilter&&myFilter.value!=='')
+  {
+    filteredItems = data.filter((item: any) => item[myFilter.property] === myFilter.value);
+  }
 
 	const subHeaderComponentMemo = React.useMemo(() => {
 		const handleClear = () => {

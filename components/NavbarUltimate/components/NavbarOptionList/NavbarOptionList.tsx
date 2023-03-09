@@ -67,7 +67,7 @@ export default function NavbarOptionList()
       icon:faRotateRight,
     },
     {
-      href:'/usuarios',
+      href:'/users',
       label:"usuarios",
       icon:faUser,
     },

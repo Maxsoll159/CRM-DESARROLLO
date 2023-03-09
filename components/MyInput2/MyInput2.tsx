@@ -1,6 +1,8 @@
 'use client'
 
-import React, { KeyboardEvent , useState } from 'react'
+import onlyNumFunc from '@/helpers/onlyNumFunc';
+import onlyTextFunc from '@/helpers/onlyTextFunc';
+import React, { useState } from 'react'
 interface props
 {
   placeholder?:string,
@@ -66,14 +68,3 @@ export default function MyInput2(props:props)
   );
 }
 
-function onlyNumFunc(e:KeyboardEvent<HTMLInputElement>)
-{
-  if (e.code.length === 7||e.code.includes('Digit')) return null;
-  e.preventDefault();
-}
-
-function onlyTextFunc(e:KeyboardEvent<HTMLInputElement>)
-{
-  if (e.code.includes("Key")) return null;
-  e.preventDefault();
-}

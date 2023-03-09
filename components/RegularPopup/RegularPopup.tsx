@@ -24,7 +24,7 @@ export default function RegularPopup({content,title}:{content:ReactNode,title:st
           <FontAwesomeIcon size="xl" icon={faXmark} />
         </button>
       </div>
-      <section className='pt-[3rem] px-[2.5rem] pb-[1.7rem] text-myBlack bg-white w-[100%] mob2:p-[1rem]'>
+      <section className='pt-[3rem] px-[2.5rem] pb-[1.7rem] text-myBlack bg-white w-[100%] mob2:p-[1rem] overflow-y-auto max-h-[45rem]'>
          {
             content
          }
