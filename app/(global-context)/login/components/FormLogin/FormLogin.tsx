@@ -26,7 +26,8 @@ export default function FormLogin({
 
   const { setUser} = useContext(appContext);
 
-  function submittingForm(e:any) {
+  function submittingForm(e:any) 
+  {
     e.preventDefault();
 
     if (errList !== "ok") return;
@@ -38,7 +39,7 @@ export default function FormLogin({
     setLoad(true);
     postRequest(form, "login").then((res) => {
       setLoad(false);
-      if (res === false) return setErrMsg(true);
+      if (res === false||res.tipo!=='ADMI') return setErrMsg(true);
       setIsWrapping(true)
       res.isLogin=true
       setUser(res);

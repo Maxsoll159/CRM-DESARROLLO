@@ -6,7 +6,7 @@ export const Acciones = () =>{
             <button className="flex align-center items-center bg-blue-500 p-3 rounded-md"><i className="fa-solid fa-list text-white"></i></button>
             <button className="flex align-center items-center bg-yellow-400 p-3 rounded-md"><i className="fa-solid fa-pen-to-square text-white"></i></button>
             <button className="flex align-center items-center bg-red-500 p-3 rounded-md"><i className="fa-solid fa-eraser text-white"></i></button>
-            <Link href={`/dashboard/certificados/${10}`} >Hola</Link>
+            <Link href={`/certificados/${10}`} >Hola</Link>
         </div>
     )
 }

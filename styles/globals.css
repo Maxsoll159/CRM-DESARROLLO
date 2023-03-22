@@ -19,6 +19,9 @@ body
   color: #98a6ad;
 }
 
+.Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
 .my-container
 {
   width: 1920px;

@@ -1,5 +1,6 @@
 'use client'
 
+import HoverMsg from '@/components/HoverMsg/HoverMsg'
 import MyBlock from '@/components/MyBlock/MyBlock'
 import NewButton from '@/components/NewButton/NewButton'
 import TheDataTable from '@/components/TheDataTable/TheDataTable'
@@ -157,17 +158,21 @@ function Option({icon,onClick,styles,label}:{icon:IconProp,onClick:()=>void,styl
 {
   const[isHover,setIsHover]=useState<boolean>(false) 
 
-  return(
+  return (
     <button
-     className={`text-myBorderDark relative hover:text-[#78797a] transition-all duration-200 text-[1rem] ${styles}`}  
-     onMouseEnter={()=>setIsHover(true)}
-     onMouseLeave={()=>setIsHover(false)}
-     onClick={onClick}
-     >
-      <span className={`capitalize absolute top-0 translate-x-[-50%] left-[50%] transition-all duration-200 text-[#fff] bg-[#30394c] py-[.2rem] px-[.4rem] w-fit whitespace-nowrap text-[.8rem] pointer-events-none rounded-[.3rem] ${isHover ? 'translate-y-[-100%] opacity-1':' translate-y-[-60%] opacity-0' }`} >
-        {label}
-      </span>
+      className={`text-myBorderDark relative hover:text-[#78797a] transition-all duration-200 text-[1rem] ${styles}`}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      onClick={onClick}
+    >
+      <HoverMsg
+        label={label}
+        isHover={isHover}
+        initial={"translate-y-[-60%] opacity-0"}
+        active={"translate-y-[-100%] opacity-1"}
+        styles={"top-0 translate-x-[-50%] left-[50%]"}
+      />
       <FontAwesomeIcon icon={icon} />
-     </button>
-  )
+    </button>
+  );
 }
